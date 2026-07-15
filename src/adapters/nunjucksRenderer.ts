@@ -5,7 +5,7 @@ import type { OssCvDocument } from "../domain/schema";
 import type { CvRenderContext, TemplateRenderer } from "../ports/templateRenderer";
 
 function defaultTemplatesDir(): string {
-  return path.resolve(process.cwd(), "osscv/templates");
+  return path.resolve(process.cwd(), "templates");
 }
 
 export class NunjucksRenderer implements TemplateRenderer {
@@ -43,6 +43,7 @@ export class NunjucksRenderer implements TemplateRenderer {
       meta: {
         liveProfileUrl: context.liveProfileUrl ?? "",
         gitworkHomeUrl: context.gitworkHomeUrl ?? "https://gitwork.getuigen.dev",
+        osscvRepoUrl: context.osscvRepoUrl ?? "https://github.com/darula-hpp/osscv",
         generatedAt: context.generatedAt ?? "",
       },
     });

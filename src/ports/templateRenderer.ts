@@ -4,6 +4,8 @@ import type { OssCvDocument } from "../domain/schema";
 export type CvRenderContext = {
   liveProfileUrl?: string;
   gitworkHomeUrl?: string;
+  /** Public GitHub repo for the osscv format / verify package (auditor link). */
+  osscvRepoUrl?: string;
   generatedAt?: string;
 };
 

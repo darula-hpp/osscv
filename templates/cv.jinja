@@ -351,6 +351,10 @@
           <a href="{{ meta.gitworkHomeUrl }}" rel="noopener noreferrer">Gitwork</a>
           {% if meta.generatedAt %} · {{ meta.generatedAt }}{% endif %}.
           Built from public GitHub evidence. View the live scout profile for the latest card and activity.
+          {% if meta.osscvRepoUrl %}
+          Format and verify spec:
+          <a href="{{ meta.osscvRepoUrl }}" rel="noopener noreferrer">osscv on GitHub</a>.
+          {% endif %}
         </p>
         {% if meta.liveProfileUrl %}
         <a class="footer-cta" href="{{ meta.liveProfileUrl }}" rel="noopener noreferrer">

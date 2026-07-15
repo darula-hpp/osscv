@@ -1,6 +1,6 @@
-# osscv — Open Source CV
+# osscv - Open Source CV
 
-Auditable TypeScript library for generating, rendering, and verifying **Open Source CVs** (public GitHub evidence only — not traditional resumes).
+Auditable TypeScript library for generating, rendering, and verifying **Open Source CVs** (public GitHub evidence only, not traditional resumes).
 
 - **Jinja-syntax templates** via Nunjucks (`templates/cv.jinja`)
 - **Genesis snapshots** with section embeddings and SHA-256 content hash
@@ -15,25 +15,25 @@ Used in production by [Gitwork](https://gitwork.getuigen.dev).
 |-------|------|
 | `domain/` | Pure parse, sectionize, hash, score, model policy |
 | `ports/` | `Embedder`, `VectorIndex`, `TemplateRenderer`, `PdfExporter`, `CvGenerator` |
-| `adapters/` | Hashing embedder, HNSW, Nunjucks, HTML→PDF |
+| `adapters/` | Hashing embedder, HNSW, Nunjucks, HTML to PDF |
 | `application/` | `OssCvService` facade + `createOssCvService` factory |
 
 ## Schema (OSS only)
 
-- `basics` — identity, summary, location (full country name), GitHub handle/avatar
-- `skills` — skill groups + keywords
-- `repos` — public repositories with summaries (no invented repos)
-- `oss` — notable contribution impact
+- `basics` - identity, summary, location (full country name), GitHub handle/avatar
+- `skills` - skill groups + keywords
+- `repos` - public repositories with summaries (no invented repos)
+- `oss` - notable contribution impact
 
 No employers, job history, or education sections.
 
 ## Algorithms
 
-1. **Sectionize** — `basics.summary`, `skills`, each `repos.*` / `oss.*`
-2. **Genesis** — immutable `{ document, model, promptVersion, contentHash, sections[] }`
-3. **Embed** — injectable; default `HashingEmbedder` (384-d, portable)
-4. **Verify** — HNSW (or exact for N≤64); fail if mean `< 0.82`, any section `< 0.65`, invented `repos.*`, or untrusted model
-5. **Structural diff** — JSON path added/removed/changed for UI
+1. **Sectionize** - `basics.summary`, `skills`, each `repos.*` / `oss.*`
+2. **Genesis** - immutable `{ document, model, promptVersion, contentHash, sections[] }`
+3. **Embed** - injectable; default `HashingEmbedder` (384-d, portable)
+4. **Verify** - HNSW (or exact for N≤64); fail if mean `< 0.82`, any section `< 0.65`, invented `repos.*`, or untrusted model
+5. **Structural diff** - JSON path added/removed/changed for UI
 
 ## Trusted models
 
@@ -58,6 +58,7 @@ const result = await svc.verify({ genesis, candidate: editedJson });
 const html = await svc.renderHtml(genesis.document, undefined, {
   liveProfileUrl: "https://gitwork.getuigen.dev/login",
   gitworkHomeUrl: "https://gitwork.getuigen.dev",
+  osscvRepoUrl: "https://github.com/darula-hpp/osscv",
 });
 const pdf = await svc.renderPdf(document);
 ```
