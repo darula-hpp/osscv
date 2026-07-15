@@ -1,0 +1,17 @@
+import type { OssCvDocument } from "../domain/schema";
+
+/** Extra template vars (live links, attribution). */
+export type CvRenderContext = {
+  liveProfileUrl?: string;
+  gitworkHomeUrl?: string;
+  generatedAt?: string;
+};
+
+/** Port: Jinja-compatible template → HTML. */
+export type TemplateRenderer = {
+  render(
+    document: OssCvDocument,
+    templateName?: string,
+    context?: CvRenderContext,
+  ): Promise<string> | string;
+};

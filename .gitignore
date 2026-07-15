@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Env / secrets (never commit)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets/
+
+# Build / coverage
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+# Test caches
+.vitest/

@@ -1,0 +1,51 @@
+{
+  "name": "osscv",
+  "version": "0.1.0",
+  "description": "Open Source CV: Jinja templates, genesis snapshots, and HNSW doctoring verification",
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "src",
+    "templates",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "nunjucks": "^3.2.4"
+  },
+  "devDependencies": {
+    "@types/nunjucks": "^3.2.6",
+    "@types/node": "^20",
+    "nunjucks": "^3.2.4",
+    "typescript": "^5",
+    "vitest": "^4.1.9"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "cv",
+    "resume",
+    "open-source",
+    "hnsw",
+    "jinja",
+    "verification",
+    "github"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darula-hpp/osscv.git"
+  },
+  "bugs": {
+    "url": "https://github.com/darula-hpp/osscv/issues"
+  },
+  "homepage": "https://github.com/darula-hpp/osscv#readme"
+}
