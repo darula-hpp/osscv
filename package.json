@@ -4,27 +4,42 @@
   "description": "Open Source CV: Jinja templates, genesis snapshots, and HNSW doctoring verification",
   "license": "MIT",
   "type": "module",
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./src/index.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
   },
   "files": [
-    "src",
+    "dist",
     "templates",
     "LICENSE",
     "README.md"
   ],
   "scripts": {
-    "test": "vitest run"
+    "build": "tsup src/index.ts --format esm --dts --clean --outDir dist --external nunjucks --external playwright",
+    "test": "vitest run",
+    "prepublishOnly": "npm test && npm run build",
+    "publish:npm": "npm publish --access public",
+    "pack:check": "npm pack --dry-run"
   },
   "peerDependencies": {
-    "nunjucks": "^3.2.4"
+    "nunjucks": "^3.2.4",
+    "playwright": ">=1.40.0"
+  },
+  "peerDependenciesMeta": {
+    "playwright": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@types/nunjucks": "^3.2.6",
     "@types/node": "^20",
     "nunjucks": "^3.2.4",
+    "playwright": "^1.61.1",
+    "tsup": "^8.5.0",
     "typescript": "^5",
     "vitest": "^4.1.9"
   },
@@ -47,5 +62,8 @@
   "bugs": {
     "url": "https://github.com/darula-hpp/osscv/issues"
   },
-  "homepage": "https://github.com/darula-hpp/osscv#readme"
+  "homepage": "https://github.com/darula-hpp/osscv#readme",
+  "publishConfig": {
+    "access": "public"
+  }
 }

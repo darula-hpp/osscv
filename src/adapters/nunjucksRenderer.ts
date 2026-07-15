@@ -1,10 +1,19 @@
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import nunjucks from "nunjucks";
 import type { OssCvDocument } from "../domain/schema";
 import type { CvRenderContext, TemplateRenderer } from "../ports/templateRenderer";
 
 function defaultTemplatesDir(): string {
+  const here = path.dirname(fileURLToPath(import.meta.url));
+  // Published: dist/adapters -> ../../templates
+  // Source checkout: src/adapters -> ../../templates
+  const fromPackage = path.resolve(here, "../../templates");
+  if (fs.existsSync(fromPackage)) return fromPackage;
+  // Gitwork monorepo fallback when imported from @/osscv/src
+  const fromCwd = path.resolve(process.cwd(), "osscv/templates");
+  if (fs.existsSync(fromCwd)) return fromCwd;
   return path.resolve(process.cwd(), "templates");
 }
 

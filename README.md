@@ -63,6 +63,17 @@ const html = await svc.renderHtml(genesis.document, undefined, {
 const pdf = await svc.renderPdf(document);
 ```
 
+## Publish
+
+```bash
+npm install
+npm run build
+npm run pack:check   # inspect tarball contents
+npm run publish:npm  # npm publish --access public (claims the osscv name)
+```
+
+`prepublishOnly` runs tests + build automatically before publish.
+
 ## Security
 
 This package contains **no API keys, tokens, or credentials**. Host apps inject LLM/MCP and database adapters separately.

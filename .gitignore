@@ -10,11 +10,11 @@ node_modules/
 credentials.json
 secrets/
 
-# Build / coverage
 dist/
 build/
 coverage/
 *.tsbuildinfo
+*.tgz
 
 # OS / editor
 .DS_Store
