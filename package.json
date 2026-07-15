@@ -1,5 +1,5 @@
 {
-  "name": "osscv",
+  "name": "@ombedzi/osscv",
   "version": "0.1.0",
   "description": "Open Source CV: Jinja templates, genesis snapshots, and HNSW doctoring verification",
   "license": "MIT",

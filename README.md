@@ -42,11 +42,11 @@ See `TRUSTED_CV_MODELS` in `src/domain/models.ts`. Genesis from other models is 
 ## Usage
 
 ```bash
-npm install osscv nunjucks
+npm install @ombedzi/osscv nunjucks
 ```
 
 ```ts
-import { createOssCvService, parseOssCvDocument } from "osscv";
+import { createOssCvService, parseOssCvDocument } from "@ombedzi/osscv";
 
 const svc = createOssCvService();
 const document = parseOssCvDocument(cvJson);
@@ -65,15 +65,16 @@ const pdf = await svc.renderPdf(document);
 
 ## Publish
 
+npm rejects the unscoped name `osscv` (too similar to `osenv`). Publish as `@ombedzi/osscv`:
+
 ```bash
 npm install
 npm run build
-npm run pack:check   # inspect tarball contents
-npm run publish:npm  # npm publish --access public (claims the osscv name)
+npm run pack:check
+npm run publish:npm
 ```
 
 `prepublishOnly` runs tests + build automatically before publish.
-
 ## Security
 
 This package contains **no API keys, tokens, or credentials**. Host apps inject LLM/MCP and database adapters separately.
