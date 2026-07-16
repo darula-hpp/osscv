@@ -79,6 +79,14 @@ npm run publish:npm
 
 This package contains **no API keys, tokens, or credentials**. Host apps inject LLM/MCP and database adapters separately.
 
+## Tests
+
+Each source directory has a `__tests__/` folder. Test files mirror the module name (`hash.ts` → `__tests__/hash.test.ts`).
+
+```bash
+npm test
+```
+
 ## License
 
 MIT

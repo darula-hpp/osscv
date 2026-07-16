@@ -349,7 +349,7 @@
         <p class="footer-copy">
           Open Source CV generated on
           <a href="{{ meta.gitworkHomeUrl }}" rel="noopener noreferrer">Gitwork</a>
-          {% if meta.generatedAt %} · {{ meta.generatedAt }}{% endif %}.
+          {% if meta.generatedAt %} · {{ meta.generatedAt }}{% endif %}{% if meta.model %} · {{ meta.model }}{% endif %}.
           Built from public GitHub evidence. View the live scout profile for the latest card and activity.
           {% if meta.osscvRepoUrl %}
           Format and verify spec:

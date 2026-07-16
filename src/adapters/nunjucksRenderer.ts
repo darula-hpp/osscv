@@ -54,6 +54,7 @@ export class NunjucksRenderer implements TemplateRenderer {
         gitworkHomeUrl: context.gitworkHomeUrl ?? "https://gitwork.getuigen.dev",
         osscvRepoUrl: context.osscvRepoUrl ?? "https://github.com/gitwork-oss/osscv",
         generatedAt: context.generatedAt ?? "",
+        model: context.model ?? "",
       },
     });
   }

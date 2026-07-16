@@ -7,6 +7,8 @@ export type CvRenderContext = {
   /** Public GitHub repo for the osscv format / verify package (auditor link). */
   osscvRepoUrl?: string;
   generatedAt?: string;
+  /** LLM model that produced the CV genesis (footer attribution). */
+  model?: string;
 };
 
 /** Port: Jinja-compatible template → HTML. */
