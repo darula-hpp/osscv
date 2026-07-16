@@ -65,8 +65,6 @@ const pdf = await svc.renderPdf(document);
 
 ## Publish
 
-npm rejects the unscoped name `osscv` (too similar to `osenv`). Publish as `@ombedzi/osscv`:
-
 ```bash
 npm install
 npm run build
