@@ -58,7 +58,7 @@ const result = await svc.verify({ genesis, candidate: editedJson });
 const html = await svc.renderHtml(genesis.document, undefined, {
   liveProfileUrl: "https://gitwork.getuigen.dev/login",
   gitworkHomeUrl: "https://gitwork.getuigen.dev",
-  osscvRepoUrl: "https://github.com/darula-hpp/osscv",
+  osscvRepoUrl: "https://github.com/gitwork-oss/osscv",
 });
 const pdf = await svc.renderPdf(document);
 ```

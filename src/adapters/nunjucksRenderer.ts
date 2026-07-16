@@ -52,7 +52,7 @@ export class NunjucksRenderer implements TemplateRenderer {
       meta: {
         liveProfileUrl: context.liveProfileUrl ?? "",
         gitworkHomeUrl: context.gitworkHomeUrl ?? "https://gitwork.getuigen.dev",
-        osscvRepoUrl: context.osscvRepoUrl ?? "https://github.com/darula-hpp/osscv",
+        osscvRepoUrl: context.osscvRepoUrl ?? "https://github.com/gitwork-oss/osscv",
         generatedAt: context.generatedAt ?? "",
       },
     });

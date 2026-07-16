@@ -57,12 +57,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/darula-hpp/osscv.git"
+    "url": "git+https://github.com/gitwork-oss/osscv.git"
   },
   "bugs": {
-    "url": "https://github.com/darula-hpp/osscv/issues"
+    "url": "https://github.com/gitwork-oss/osscv/issues"
   },
-  "homepage": "https://github.com/darula-hpp/osscv#readme",
+  "homepage": "https://github.com/gitwork-oss/osscv#readme",
   "publishConfig": {
     "access": "public"
   }
