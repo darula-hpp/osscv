@@ -42,11 +42,13 @@ See `TRUSTED_CV_MODELS` in `src/domain/models.ts`. Genesis from other models is 
 ## Usage
 
 ```bash
-npm install @ombedzi/osscv nunjucks
+npm install @gitwork-oss/osscv nunjucks
 ```
 
+> Formerly published as `@ombedzi/osscv`. Install and import `@gitwork-oss/osscv` under the [gitwork-oss](https://github.com/gitwork-oss) org.
+
 ```ts
-import { createOssCvService, parseOssCvDocument } from "@ombedzi/osscv";
+import { createOssCvService, parseOssCvDocument } from "@gitwork-oss/osscv";
 
 const svc = createOssCvService();
 const document = parseOssCvDocument(cvJson);
